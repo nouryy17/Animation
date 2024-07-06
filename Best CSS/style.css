@@ -13,7 +13,7 @@ body{
 }
 .continner{
     display: grid;
-    grid-template-columns: repeat(10,100px);
+    grid-template-columns: repeat(15,100px);
     grid-gap: 4px;
 }
 .continner span{
@@ -23,11 +23,18 @@ body{
     background: #000;
     z-index: 10;
 }
+.continner span::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height:100% ;
+    background: rgba(255, 255,255,0.05) ;
+}
 .cursor{
     position: absolute;
     width: 500px;
     height: 500px;
-    background-color: #0f0;
+    background: #0f0;
     transform: translate(-50%,-50%);
     z-index: 1;
     border-radius: 50%;
