@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+}
+.open{
+    display: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+.open .Layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    animation: anim 1s  ease-in-out forwards ;
+    
+}
+.open .Layer:nth-child(1){
+    background: #000;
+    z-index: 2;
+}
+.open .Layer:nth-child(2){
+    background: #03a9f4;
+    animation-delay: 1s;
+    z-index: 1;
+}
+@keyframes anim {
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(0);
+
+    }
+
+}
+section{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+section .bannerText {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    max-width: 700px;
+}
+section .bannerText h2,
+section .bannerText h3{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    transform-origin: left;
+    text-transform: uppercase;
+    transform: scaleX(1);
+    animation: anim3 1s ease-in-out forwards;
+
+}
+section .bannerText h2{
+    font-size: 4em;
+    animation-delay: 2s;
+}
+section .bannerText h3{
+    font-size:2em;
+    animation-delay: 3s;
+
+}
+section .bannerText h2::before,
+section .bannerText h3::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    transform-origin: right;
+    animation: anim2 1s ease-in-out forwards;
+    animation-delay: 3s;
+}
+section .bannerText h3::before{
+    animation-delay: 4s;
+}
+@keyframes anim2 {
+    0%{
+        transform: scaleX(1);
+    }
+    100%{
+        transform: scaleX(0);
+
+    }
+
+}
+@keyframes anim3 {
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+
+    }
+}
+.bannerText p{
+    opacity: 0;
+    font-weight: 400;
+    font-size: 1em;
+    animation: anim4 1s linear forwards;
+    animation-delay: 5s;
+}
+@keyframes anim4 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+
+    }
+
+}
+.bannerText a{
+    opacity: 0;
+    display: inline-block;
+    margin: 20px 0 0;
+    padding: 10px 20px ;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    text-decoration:none ;
+    font-size: 16px;
+    letter-spacing: 1px;
+    animation: anim5 0.5s linear forwards;
+    animation-delay: 5.5s;
+}
+@keyframes anim5 {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+.bulb{
+    opacity: 0;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: anim6 1s linear forwards;
+    animation-delay: 6s;
+}
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 100;
+}
+.header .logo{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    animation-delay: 2s;
+    animation: anim2 1s ease-in-out forwards;
+
+}

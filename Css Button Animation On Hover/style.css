@@ -9,66 +9,97 @@ body{
     align-items: center;
     min-height: 100vh;
 }
-button{
+button{ 
     border: 2px solid rgb(17, 100, 245);
     width: 150px;
     height: 50px;
     cursor: pointer;
-    background-color: white;
-    position: relative;
+    position: absolute;
     color: white;
+    background-color: rgb(17, 100, 245);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 3px;
+    box-shadow: 0 5px 10px #c4c4c4;
+    transition: .5s;
 }
+a{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 4;
+}
+button:hover{
+    text-shadow: 0px 1.5px 3px #333;
+    background-color: white;
+}
+
 button::after,
 button::before{
     content: "";
     background-color: rgb(17, 100, 245);
-    width: 50%;
+    width: 54%;
     height: 100%;
     position: absolute;
     top: 0;
-    z-index: 3;
+    z-index: -1;
+    opacity: 0;
+
 }
 button::before{
-    right: 0;
+    right: -3px;
+    box-shadow: -3px 0 2px #9b8c8c4f;
 }
 button::after{
-    left: 0;
+    left: -3px;
 }
-button span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: white;
-    width: 100%;
-    height: 100%;
-    font-weight: 600;
-    z-index: 5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+button:hover::after{
+    animation: anim1 2s infinite linear;
+    z-index: 2;
+    opacity: 1;
     
 }
-span:hover  button::after{
-    animation: anim1 2s infinite linear;
+button:hover::before{
+    animation: anim2 2s infinite linear;
+    z-index: 3;
+    opacity: 1;
 }
-@keyframes anim {
+@keyframes anim1 {
     0%{
-        /* top: 0; */
+       
         transform: translateY(0);
     }
     25%{
-        /* top: 20px; */
-        transform: translateY(20px);
+        transform: translateY(5px);
 
     }
     50%{
-        /* top: 0; */
+     
         transform: translateY(0);
 
     }
     100%{
-        /* top: -20px; */
-        transform: translateY(-20px);
+        transform: translateY(-5px);
+
+    }
+
+}
+@keyframes anim2 {
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-5px);
+
+    }
+    50%{
+        transform: translateY(0px);
+
+    }
+    100%{
+        transform: translateY(5px);
 
     }
 
