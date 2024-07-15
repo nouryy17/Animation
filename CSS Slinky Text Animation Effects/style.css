@@ -26,27 +26,27 @@ p{
 }
 p:nth-of-type(2){
     color: blue;
-    animation-delay: 0.01s;
+    animation-delay: 0.04s;
 }
 p:nth-of-type(3){
     color: rgb(245, 255, 57);
-    animation-delay: 0.02s;
+    animation-delay: 0.08s;
 }
 p:nth-of-type(4){
     color: rgb(255, 255, 255);
-    animation-delay: 0.03s;
+    animation-delay: 0.16s;
 }
 p:nth-of-type(5){
     color: rgb(234, 80, 142);
-    animation-delay: 0.05s;
+    animation-delay: 0.2s;
 }
 p:nth-of-type(6){
     color: blue;
-    animation-delay: 0.04s;
+    animation-delay: 0.24s;
 }
 p:nth-of-type(7){
     color: rgb(255, 144, 32);
-    animation-delay: 0.06s;
+    animation-delay: 0.28s;
 }
 @keyframes anim {
     0%{
@@ -55,14 +55,14 @@ p:nth-of-type(7){
     }
     25%{
         top: 0;
-        left: 50%;
+        left: 250px;
     }
     50%{
-        top: 50%;
-        left: 50%;
+        top: 250px;
+        left: 250px;
     }
     75%{
-        top: 50%;
+        top: 250px;
         left: 0%;
     }
     100%{
