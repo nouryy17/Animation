@@ -12,12 +12,19 @@ document.addEventListener("mousemove",function (event) {
     let distanceY= mouseY - text.offsetTop -  text.offsetHeight / 2;
     
     let newShadow="";
-    for (var i = 0; i < 200; i++) {
-        let shadowX = -distanceX * (i / 200)
-        let shadowY = -distanceY * (i / 200)
-        let opactiy = 1 - (i / 100)
-        newShadow += (newShadow ? "," : "") + shadowX 
-        + "px" + shadowY + "px 0 rgba(33,33,33,"+opactiy+")";
+    for (let i = 0; i < 200; i++) {
+        let shadowX = -distanceX * (i / 200);
+        let shadowY = -distanceY * (i / 200);
+        let opacity = 1 - i / 100;
+
+        newShadow +=
+            (newShadow ? "," : "") +
+            shadowX +
+            "px " +
+            shadowY +
+            "px 0 rgba(33,33,33," +
+            opacity +
+            ")";
     }
     text.style.textShadow = newShadow
 })
