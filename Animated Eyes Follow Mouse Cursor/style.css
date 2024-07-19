@@ -19,23 +19,23 @@ body{
     border-radius: 50%;
 
 }
-.face > div{
+.face .eys{
     top: -40px;
     position: relative;
     display: flex;
 }
-.face > div .eye{
+.face .eys .eye{
     width: 70px ;
     height: 70px;
     border-radius: 50%;
     background-color: azure;
     position: relative;
 }
-.face > div .eye::after{
+.face .eys .eye::after{
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: attr(data-top);
+    left:attr(data-left);
     transform: translate(-50%,-50%);
     width: 30px ;
     height: 30px;
