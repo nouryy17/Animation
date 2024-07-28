@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-selector-demo</title>
+    <style>
+        .css-selector-demo{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .movement{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+     <div class="css-selector-demo">
+        <div class="movement"></div>
+     </div>
+    <script src="anime.min.js"></script>
+    <script>
+       anime({
+               targets: '.css-selector-demo .movement',
+               translateX: 500,
+               rotateZ:360,
+               
+            });
+    </script>
+</body>
+</html>
