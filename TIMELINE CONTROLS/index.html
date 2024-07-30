@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>  
+    body{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .seek-anim-demo{
+          width: 500px;
+          height: 500px;
+        }
+        .el{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(24, 122, 122);
+            margin-bottom: 5px;
+        }
+        .progress{
+            width: 300px;
+            background-color: rgb(39, 106, 106);
+        }
+    </style>
+    <body>
+        <div class="timeline-controls-demo">
+            <div class="square el"></div>
+            <div class="circle el"></div>
+            <div class="triangle el"></div>
+            <button class="play">play</button>
+            <button class="pause">pause</button>
+            <button class="restart">restart</button>
+            <input type="range" class="progress" min="0" max="100" value="0">
+        </div>
+        <script src="anime.min.js"></script>
+        <script>
+var controlsProgressEl = document.querySelector('.timeline-controls-demo .progress');
+
+var tl = anime.timeline({
+  direction: 'alternate',
+  loop: true,
+  duration: 500,
+  easing: 'easeInOutSine',
+  update: function(anim) {
+    controlsProgressEl.value = tl.progress;
+  }
+});
+
+tl
+.add({
+  targets: '.timeline-controls-demo .square.el',
+  translateX: 270,
+})
+.add({
+  targets: '.timeline-controls-demo .circle.el',
+  translateX: 270,
+}, '-=100')
+.add({
+  targets: '.timeline-controls-demo .triangle.el',
+  translateX: 270,
+}, '-=100');
+
+document.querySelector('.timeline-controls-demo .play').onclick = tl.play;
+document.querySelector('.timeline-controls-demo .pause').onclick = tl.pause;
+document.querySelector('.timeline-controls-demo .restart').onclick = tl.restart;
+
+controlsProgressEl.addEventListener('input', function() {
+  tl.seek(tl.duration * (controlsProgressEl.value / 100));
+});
+</script>
+</body>
+</html>
