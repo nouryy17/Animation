@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .seek-anim-demo{
+width: 500px;
+height: 500px;
+    }
+    .el{
+        width: 50px;
+        height: 50px;
+        background-color: rgb(24, 122, 122);
+        margin-bottom: 5px;
+    }
+    .progress{
+        width: 300px;
+        background-color: rgb(39, 106, 106);
+    }
+</style>
+<body>
+    <div class="seek-anim-demo">
+        <div class="el"></div>
+        <div class="el"></div>
+        <div class="el"></div>
+        <input type="range" class="progress" max="100" min="0" value="0">
+    </div>
+    <script src="anime.min.js"></script>
+    <script>
+    var animation = anime({
+               targets: '.seek-anim-demo .el',
+               translateX: 270,
+               delay: function(el, i) { return i * 100; },
+               elasticity: 200,
+               easing: 'easeInOutSine',
+               autoplay: false
+});
+
+var seekProgressEl = document.querySelector('.seek-anim-demo .progress');
+seekProgressEl.oninput = function() {
+  animation.seek(animation.duration * (seekProgressEl.value / 100));
+};
+    </script>
+</body>
+</html>
