@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: darkblue;
+    }
+    main{
+        width: 600px;
+        height: 325px;
+        border: 6px solid brown;
+    }
+    div{
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        margin-bottom: 5px;
+    }
+</style>
+<body>
+    <main>
+         <div class="loop"></div>
+         <div class="loop-infinity"></div>
+         <div class="loop-reverse"></div>
+         <div class="loop-reverse-infinity"></div>
+         <div class="loop-alternate"></div>
+         <div class="loop-alternate-infinity"></div>
+    </main>
+    <script src="anime.min.js"></script>
+    <script>
+        anime({
+  targets: '.loop',
+  translateX: 270,
+  loop: 3,
+  easing: 'easeInOutSine'
+});
+
+anime({
+  targets: '.loop-infinity',
+  translateX: 270,
+  loop: true,
+  easing: 'easeInOutSine'
+});
+
+anime({
+  targets: '.loop-reverse',
+  translateX: 270,
+  loop: 3,
+  direction: 'reverse',
+  easing: 'easeInOutSine'
+});
+
+anime({
+  targets: '.loop-reverse-infinity',
+  translateX: 270,
+  direction: 'reverse',
+  loop: true,
+  easing: 'easeInOutSine'
+});
+
+anime({
+  targets: '.loop-alternate',
+  translateX: 270,
+  loop: 3,
+  direction: 'alternate',
+  easing: 'easeInOutSine'
+});
+
+anime({
+  targets: '.loop-alternate-infinity',
+  translateX: 270,
+  direction: 'alternate',
+  loop: true,
+  easing: 'easeInOutSine'
+});
+    </script>
+</body>
+</html>
