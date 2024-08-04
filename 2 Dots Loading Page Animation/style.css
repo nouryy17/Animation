@@ -14,11 +14,11 @@ div::before{
     border-radius: 50%;
 }
 div::before{
-    background-color: rgb(164, 0, 101);   
+    background-color: rgb(11, 160, 26);   
     animation: f 2s linear infinite;
 }
 div::after{
-    background-color: rgb(255, 214, 81);
+    background-color: rgb(255, 127, 81);
     animation: f 2s linear infinite;
     animation-delay: -1s;
 
