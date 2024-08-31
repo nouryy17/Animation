@@ -14,11 +14,11 @@ body{
     transform: translate(-50%,-50%);
     width: 200Px;
     height: 200px;
-    border: 15px solid #ff5f5f;
+    border: 15px solid #c07621;
     border-radius: 50%;
     background: url(floor-grandfather-clocks-digital-clock-drawing-template-download-time.jpg);
     background-size: cover;
-    box-shadow: -2px 2px 0 #e23232,inset 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: -2px 2px 0 #e29c32,inset 0 0 20px rgba(0,0,0,0.5);
     background-color: #fff;
 
 }
